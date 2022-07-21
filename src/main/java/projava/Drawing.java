@@ -1,0 +1,29 @@
+package projava;
+
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.awt.Color;
+
+public class Drawing {
+    public static void main(String[] args) {
+        var f = new JFrame("drawing");
+        f.setVisible(true);
+
+        var label = new JLabel("test");
+        f.add(label);
+
+        var image = new BufferedImage(600, 400, BufferedImage.TYPE_INT_RGB);
+        label.setIcon(new ImageIcon(image));
+        f.pack();
+
+        var g = image.createGraphics();
+        g.drawLine(0, 0, 600, 400);
+        g.setColor(java.awt.Color.RED);
+        g.fillRect(300, 200, 150, 100);
+        g.drawLine(0, 400, 600, 0);
+
+        g.setColor(Color.BLUE);
+        g.fillOval(50, 200, 150, 150);
+        label.repaint();
+    }
+}
