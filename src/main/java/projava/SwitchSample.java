@@ -1,4 +1,4 @@
-package projava.projava;
+package projava;
 
 public class SwitchSample {
     public static void main(String[] args) {
